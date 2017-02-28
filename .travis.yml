@@ -15,7 +15,7 @@ before_install:
   # Codecov
   - sudo pip install codecov
   # OCLint
-  - ./install_oclint.sh
+  - ./install_oclint
 
 install: 
   # C++14
@@ -29,10 +29,10 @@ script:
   - make
   - ./boost_xpressive_example1
   # Get code coverage
-  - ./get_code_cov.sh
+  - ./get_code_cov
   - codecov
   # Call OCLint
-  - ./do_oclint.sh
+  - ./do_oclint
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
